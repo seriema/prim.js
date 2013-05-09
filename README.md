@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/seriema/jquery.existence.png?branch=master)](https://travis-ci.org/seriema/jquery.existence)
+[![Build Status](https://travis-ci.org/seriema/prim.js.png?branch=master)](https://travis-ci.org/seriema/prim.js)
 
 # prim.js
 
