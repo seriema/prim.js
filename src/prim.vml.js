@@ -1,7 +1,7 @@
-(function(window) {
+(function(window, namespaces) {
     'use strict';
 
-    document.namespaces && document.namespaces.add('v','urn:schemas-microsoft-com:vml');
+    namespaces && namespaces.add('v','urn:schemas-microsoft-com:vml');
 
     var vmlCanvas = function (placeholder) {
         this.canvas = placeholder;
@@ -11,16 +11,16 @@
 
     vmlCanvas.type = 'vml';
 
-    vmlCanvas.prototype.rect  = function (x, y, w, h) {
+    vmlCanvas.prototype.rect  = function (x, y, width, height) {
         var frag = document.createDocumentFragment();
         var el = frag.appendChild(document.createElement('v:rect'));
-        el.style.left=x;
-        el.style.top=y;
-        el.style.width=w;
-        el.style.height=h;
-        el.style.position='absolute';
-        el.style.behavior='url(#default#VML)';
-        el.style.display='inline-block';
+        el.style.left = x;
+        el.style.top = y;
+        el.style.width = width;
+        el.style.height = height;
+        el.style.position = 'absolute';
+        el.style.behavior = 'url(#default#VML)';
+        el.style.display = 'inline-block';
         // TODO: add fillColor
         // TODO: add strokeWidth
 
@@ -32,4 +32,4 @@
     window.Prim = vmlCanvas;
     window.Prim.vml = vmlCanvas;
     window.Prim.svg = old;
-}(window));
+}(window, document.namespaces));
