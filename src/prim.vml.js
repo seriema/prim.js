@@ -23,8 +23,8 @@
         // TODO: add strokeWidth
 
         this.canvas.appendChild(frag);
-        return el;
+        return frag;
     };
 
-    window.Tinyvector = vmlCanvas;
+    window.Prim = vmlCanvas;
 }(window));

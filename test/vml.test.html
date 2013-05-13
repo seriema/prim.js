@@ -7,10 +7,13 @@
 
     <script src="../src/prim.vml.js"></script>
     <script>
-        var canvas = document.getElementById('test-fixture');
-        var c = new Tinyvector(canvas, 500, 500);
-        c.rect(50,50, 200,200);
-        c.rect(100,100, 200,200);
+        var div = document.getElementById('test-fixture');
+        var canvas = new Prim(div, 500, 500);
+        var element = canvas.rect(50,50, 200,200);
+        canvas.rect(100,100, 200,200);
+        setTimeout(function () {
+            element.remove();
+        }, 1000);
     </script>
 </body>
 </html>

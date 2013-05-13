@@ -22,5 +22,5 @@
         return el;
     };
 
-    window.Tinyvector = svgCanvas;
+    window.Prim = svgCanvas;
 }(window));
