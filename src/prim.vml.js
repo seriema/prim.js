@@ -1,13 +1,15 @@
 (function(window) {
     'use strict';
 
-    document.namespaces.add('v','urn:schemas-microsoft-com:vml');
+    document.namespaces && document.namespaces.add('v','urn:schemas-microsoft-com:vml');
 
     var vmlCanvas = function (placeholder) {
         this.canvas = placeholder;
         // TODO: add width
         // TODO: add height
     };
+
+    vmlCanvas.type = 'vml';
 
     vmlCanvas.prototype.rect  = function (x, y, w, h) {
         var frag = document.createDocumentFragment();
@@ -26,5 +28,8 @@
         return frag;
     };
 
+    var old = window.Prim;
     window.Prim = vmlCanvas;
+    window.Prim.vml = vmlCanvas;
+    window.Prim.svg = old;
 }(window));

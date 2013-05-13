@@ -9,11 +9,11 @@
     <script>
         var div = document.getElementById('test-fixture');
         var canvas = new Prim(div, 500, 500);
-        var element = canvas.rect(50,50, 200,200);
+        var toRemove = canvas.rect(50,50, 200,200);
         canvas.rect(100,100, 200,200);
         setTimeout(function () {
-            element.remove();
-        }, 1000);
+            toRemove.remove();
+        }, 2000);
     </script>
 </body>
 </html>
