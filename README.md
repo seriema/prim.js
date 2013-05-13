@@ -18,10 +18,11 @@ In your web page:
 <script src="../src/prim.svg.js"></script>
 <script>
     var canvas = document.getElementById('canvas');
-    var c = new Tinyvector(canvas, 500, 500);
+    var c = new Prim(canvas, 500, 500);
     c.rect(50,50, 200,200);
 </script>
 ```
 
 ## Release History
+v0.2.0 - 13 may 2013 - update to API
 v0.1.0 - 9 may 2013 - first public release
