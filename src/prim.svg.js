@@ -16,9 +16,9 @@
 
     svgCanvas.type = 'svg';
 
-    svgCanvas.prototype.rect  = function (x, y, w, h, fillColor, strokeWidth) {
+    svgCanvas.prototype.rect  = function (x, y, width, height, className) {
         var el = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        var attributes = { x:x, y:y, width:w, height:h, fill:'none', stroke: fillColor || 'blue', 'stroke-width': strokeWidth || '2' };
+        var attributes = { x: x, y: y, width: width, height: height, 'class': className };
         copyAttributes(el, attributes);
         this.canvas.appendChild(el);
         return el;

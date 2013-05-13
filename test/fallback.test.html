@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        .rectClass {
+            fill: none;
+            stroke: blue;
+            stroke-width: 2;
+        }
+    </style>
 </head>
 <body id="main">
     <div id="test-fixture"></div>
@@ -18,8 +25,8 @@
 
         var div = document.getElementById('test-fixture');
         var canvas = new Prim(div, 500, 500);
-        var toRemove = canvas.rect(50,50, 200,200);
-        canvas.rect(100,100, 200,200);
+        var toRemove = canvas.rect(50,50, 200,200, 'rectClass');
+        canvas.rect(100,100, 200,200, 'rectClass');
         setTimeout(function () {
             toRemove.remove();
         }, 2000);
