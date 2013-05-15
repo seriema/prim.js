@@ -1,7 +1,11 @@
 (function(window, namespaces) {
     'use strict';
 
-    namespaces && namespaces.add('v','urn:schemas-microsoft-com:vml');
+    if (window.Prim.svg)
+        return;
+
+    if (namespaces)
+        namespaces.add('v','urn:schemas-microsoft-com:vml');
 
     var vmlCanvas = function (placeholder) {
         this.canvas = placeholder;
@@ -25,11 +29,9 @@
         // TODO: add strokeWidth
 
         this.canvas.appendChild(frag);
-        return frag;
+        return el;
     };
 
-    var old = window.Prim;
     window.Prim = vmlCanvas;
-    window.Prim.vml = vmlCanvas;
-    window.Prim.svg = old;
+    window.Prim.svg = false; // Put it back
 }(window, document.namespaces));

@@ -1,6 +1,9 @@
 (function(window) {
     'use strict';
 
+    if (!window.Prim.svg)
+        return;
+
     function copyAttributes(el, attributes) {
         for (var key in attributes)
             if(attributes.hasOwnProperty(key))
@@ -24,8 +27,6 @@
         return el;
     };
 
-    var old = window.Prim;
     window.Prim = svgCanvas;
-    window.Prim.svg = svgCanvas;
-    window.Prim.vml = old;
+    window.Prim.svg = true; // Put it back
 }(window));

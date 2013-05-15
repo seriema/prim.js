@@ -12,23 +12,17 @@
 <body id="main">
     <div id="test-fixture"></div>
 
-    <script src="../src/prim.svg.js"></script>
-    <script src="../src/prim.vml.js"></script>
+    <script src="../dist/prim.js"></script>
     <script>
         var body = document.getElementById('main');
         var browser = body.classNames;
-
-        if (browser === 'ie7' || browser === 'ie8')
-            Prim = Prim.vml;
-        else
-            Prim = Prim.svg;
 
         var div = document.getElementById('test-fixture');
         var canvas = new Prim(div, 500, 500);
         var toRemove = canvas.rect(50,50, 200,200, 'rectClass');
         canvas.rect(100,100, 200,200, 'rectClass');
         setTimeout(function () {
-            toRemove.remove();
+            toRemove.parentNode.removeChild(toRemove);
         }, 2000);
     </script>
 </body>
